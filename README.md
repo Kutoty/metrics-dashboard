@@ -1,12 +1,21 @@
 # Metrics dashboard
 
-A one-page board that receives live request, error, and latency counts from the server. The browser uses a server-sent event stream, so the numbers change without a reload.
+Next.js page, a WebSocket server, and an optional PostgreSQL count.
 
 ## Run
 
 ```bash
+npm install
 npm test
-npm start
+npm run socket
+npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000. The socket listens on `ws://localhost:3001`.
+
+With Postgres:
+
+```bash
+docker compose up -d
+DATABASE_URL=postgres://metrics:metrics@localhost:5432/metrics npm run socket
+```

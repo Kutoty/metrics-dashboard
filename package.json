@@ -1,9 +1,25 @@
 {
   "name": "metrics-dashboard",
   "private": true,
-  "type": "module",
   "scripts": {
-    "start": "node server.mjs",
-    "test": "node --test"
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build",
+    "socket": "node server/ws.mjs",
+    "test": "node --experimental-strip-types --test test/sample.test.ts"
+  },
+  "dependencies": {
+    "next": "^15.2.2",
+    "pg": "^8.14.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/pg": "^8.11.11",
+    "@types/react": "^19.0.10",
+    "@types/ws": "^8.5.14",
+    "typescript": "^5.8.2"
   }
 }
